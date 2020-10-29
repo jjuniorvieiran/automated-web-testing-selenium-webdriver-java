@@ -10,17 +10,20 @@ public class WebDriverDemo {
 
 	public static void main(String[] args) {
 		WebDriver driver = new FirefoxDriver();
-		driver.get("http://www.pluralsights.com");
+		driver.get("https://www.amazon.com/");
 		
-		WebElement searchField = driver.findElement(By.id("lst-ib"));
-		searchField.sendKeys("pluralsight");
+		WebElement searchField = driver.findElement(By.id("twotabsearchtextbox"));
+		searchField.sendKeys("book about hell");
 		searchField.submit();
 		
-		WebElement imagesLink = driver.findElements(By.linkText("Images")).get(0);
+		WebElement imagesLink = driver.findElements(By.linkText("Sell")).get(0);
 		imagesLink.click();
-		
-		WebElement imageElement = driver.findElements(By.cssSelector("a[class = rg_l]")).get(0);
-		WebElement imageLink = imageElement.findElements(By.tagName("img")).get(0);
-		imageLink.click();
+
+		WebElement imagesLink2 = driver.findElements(By.linkText("Registry")).get(0);
+		imagesLink2.click();
+//
+//		WebElement imageElement = driver.findElements(By.cssSelector("a[class = rg_l]")).get(0);
+//		WebElement imageLink = imageElement.findElements(By.tagName("img")).get(0);
+//		imageLink.click();
 	}
 }
