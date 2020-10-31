@@ -17,7 +17,7 @@ public class WebDriverDemo {
 		//WebDriver driver = new ChromeDriver();
 		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), // now we going to run the
 				// tests against the servers.For instance if we have a hub we can run in different servers
-				new DesiredCapabilities("firefox", "", Platform.VISTA));
+				new DesiredCapabilities("firefox", "", Platform.VISTA)); //here we can specify which platform(MACOS,Linux) we going to run it
 		
 		driver.get("http://www.google.com");
 		
