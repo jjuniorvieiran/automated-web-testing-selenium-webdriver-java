@@ -4,13 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebDriverDemo {
 
 	public static void main(String[] args) {
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = new FirefoxDriver();
 		driver.get("http://www.google.com");
 		
 		WebElement searchField = driver.findElement(By.id("lst-ib"));
@@ -18,8 +19,8 @@ public class WebDriverDemo {
 		searchField.submit();
 		
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Images")));
+		WebDriverWait wait = new WebDriverWait(driver, 10);//explicit wait
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Images")));//explicit waitE
 		
 		WebElement imagesLink = driver.findElements(By.linkText("Images")).get(0);
 		imagesLink.click();

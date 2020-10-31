@@ -15,7 +15,8 @@ public class WebDriverDemo {
 
 	public static void main(String[] args) throws Exception {
 		//WebDriver driver = new ChromeDriver();
-		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), // now we going to run the
+				// tests against the servers.For instance if we have a hub we can run in different servers
 				new DesiredCapabilities("firefox", "", Platform.VISTA));
 		
 		driver.get("http://www.google.com");
@@ -27,6 +28,7 @@ public class WebDriverDemo {
 		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Images")));
+		//wait is important based on latency from local to server
 		
 		WebElement imagesLink = driver.findElements(By.linkText("Images")).get(0);
 		imagesLink.click();
