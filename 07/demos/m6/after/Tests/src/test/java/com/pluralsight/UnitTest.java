@@ -4,6 +4,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
 
+//Tests where call the page and has the assertions
 public class UnitTest {
 
 	@Test

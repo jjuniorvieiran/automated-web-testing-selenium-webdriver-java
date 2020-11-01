@@ -17,7 +17,7 @@ public class Pages {
 
 	public static PathPage javaPathPage() {
 		PathPage javaPathPage = new JavaPathPage();
-		PageFactory.initElements(Browser.driver, javaPathPage);
+		PageFactory.initElements(Browser.driver, javaPathPage); //using this to verify the page we are on
 		return javaPathPage;
 	}
 	

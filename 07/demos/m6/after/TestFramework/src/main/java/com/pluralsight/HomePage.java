@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-
+//TestFramework where there are: test configuration, page, elements, title name and so on
 public class HomePage {
 
 	static String url = "http://www.pluralsight.com";
